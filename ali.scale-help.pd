@@ -1,0 +1,6 @@
+#N canvas 745 339 450 300 10;
+#X obj 122 168 ali.scale 0 127 0 1000;
+#X floatatom 118 102 5 0 0 0 - - -, f 5;
+#X floatatom 117 240 5 0 0 0 - - -, f 5;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;

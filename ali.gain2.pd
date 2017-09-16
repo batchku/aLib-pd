@@ -1,0 +1,14 @@
+#N canvas 0 22 202 151 10;
+#X obj 20 68 ali.gain;
+#X obj 77 69 ali.gain;
+#X obj 19 23 inlet~;
+#X obj 66 24 inlet~;
+#X obj 119 24 inlet;
+#X obj 20 102 outlet~;
+#X obj 76 103 outlet~;
+#X connect 0 0 5 0;
+#X connect 1 0 6 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 1;
+#X connect 4 0 1 1;

@@ -1,0 +1,192 @@
+#N canvas 99 158 1013 568 10;
+#X obj 438 434 dac~;
+#X obj 176 258 ali.paf-space-abs 0;
+#N canvas 0 23 1119 714 sensel 0;
+#X obj 101 245 route 0 1 2 3 4 5;
+#X floatatom 56 246 5 0 0 0 - - -, f 5;
+#X obj 38 345 unpack 1 1 1 1 1;
+#X floatatom 38 413 5 0 0 0 - - -, f 5;
+#X floatatom 78 413 5 0 0 0 - - -, f 5;
+#X obj 84 465 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 11082 1;
+#X obj 30 522 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7561 1;
+#X floatatom 117 413 5 0 0 0 - - -, f 5;
+#X floatatom 156 414 5 0 0 0 - - -, f 5;
+#X floatatom 195 415 5 0 0 0 - - -, f 5;
+#X obj 156 440 / 50;
+#X obj 167 466 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 109 1;
+#X obj 188 467 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1225 1;
+#X obj 195 442 / 4;
+#X obj 78 440 / 2;
+#X obj 29 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 56 67 oscparse;
+#X obj 56 29 netreceive -u -b 1234;
+#X obj 56 187 route count contacts;
+#X obj 56 150 route sensel;
+#X obj 56 110 route list;
+#X text 11 246 count;
+#X text 35 395 state;
+#X text 230 246 id;
+#X text 78 395 x_pos;
+#X text 119 395 y_pos;
+#X text 158 395 force;
+#X text 198 397 area;
+#X obj 248 348 unpack 1 1 1 1 1;
+#X floatatom 248 416 5 0 0 0 - - -, f 5;
+#X floatatom 288 416 5 0 0 0 - - -, f 5;
+#X obj 294 468 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8926 1;
+#X obj 240 525 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 10343 1;
+#X floatatom 327 416 5 0 0 0 - - -, f 5;
+#X floatatom 366 417 5 0 0 0 - - -, f 5;
+#X floatatom 405 418 5 0 0 0 - - -, f 5;
+#X obj 366 443 / 50;
+#X obj 377 469 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 97 1;
+#X obj 398 470 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 375 1;
+#X obj 405 445 / 4;
+#X obj 288 443 / 2;
+#X text 245 398 state;
+#X text 288 398 x_pos;
+#X text 329 398 y_pos;
+#X text 368 398 force;
+#X text 408 400 area;
+#X obj 457 353 unpack 1 1 1 1 1;
+#X floatatom 457 421 5 0 0 0 - - -, f 5;
+#X floatatom 497 421 5 0 0 0 - - -, f 5;
+#X obj 503 473 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3572 1;
+#X obj 449 530 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 9858 1;
+#X floatatom 536 421 5 0 0 0 - - -, f 5;
+#X floatatom 575 422 5 0 0 0 - - -, f 5;
+#X floatatom 614 423 5 0 0 0 - - -, f 5;
+#X obj 575 448 / 50;
+#X obj 586 474 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 79 1;
+#X obj 607 475 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 700 1;
+#X obj 614 450 / 4;
+#X obj 497 448 / 2;
+#X text 454 403 state;
+#X text 497 403 x_pos;
+#X text 538 403 y_pos;
+#X text 577 403 force;
+#X text 617 405 area;
+#X obj 661 354 unpack 1 1 1 1 1;
+#X floatatom 661 422 5 0 0 0 - - -, f 5;
+#X floatatom 701 422 5 0 0 0 - - -, f 5;
+#X obj 707 474 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9991 1;
+#X obj 653 531 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5916 1;
+#X floatatom 740 422 5 0 0 0 - - -, f 5;
+#X floatatom 779 423 5 0 0 0 - - -, f 5;
+#X floatatom 818 424 5 0 0 0 - - -, f 5;
+#X obj 779 449 / 50;
+#X obj 790 475 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 90 1;
+#X obj 811 476 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 875 1;
+#X obj 818 451 / 4;
+#X obj 701 449 / 2;
+#X text 658 404 state;
+#X text 701 404 x_pos;
+#X text 742 404 y_pos;
+#X text 781 404 force;
+#X text 821 406 area;
+#X text 214 30 <--- must use -u for UPD \, and -b for binary;
+#X text 214 45 Port number matches "TARGET_PORT" in sensel_osc.py;
+#X obj 261 143 print from-sensel;
+#X obj 261 104 spigot;
+#X obj 341 74 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 298 245 s fingers;
+#X connect 0 0 2 0;
+#X connect 0 1 28 0;
+#X connect 0 2 46 0;
+#X connect 0 3 64 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 2 7 0;
+#X connect 2 3 8 0;
+#X connect 2 4 9 0;
+#X connect 4 0 14 0;
+#X connect 7 0 5 0;
+#X connect 8 0 10 0;
+#X connect 9 0 13 0;
+#X connect 10 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 6 0;
+#X connect 16 0 20 0;
+#X connect 16 0 85 0;
+#X connect 17 0 15 0;
+#X connect 17 0 16 0;
+#X connect 18 0 1 0;
+#X connect 18 1 0 0;
+#X connect 18 1 87 0;
+#X connect 19 0 18 0;
+#X connect 20 0 19 0;
+#X connect 28 0 29 0;
+#X connect 28 1 30 0;
+#X connect 28 2 33 0;
+#X connect 28 3 34 0;
+#X connect 28 4 35 0;
+#X connect 30 0 40 0;
+#X connect 33 0 31 0;
+#X connect 34 0 36 0;
+#X connect 35 0 39 0;
+#X connect 36 0 37 0;
+#X connect 39 0 38 0;
+#X connect 40 0 32 0;
+#X connect 46 0 47 0;
+#X connect 46 1 48 0;
+#X connect 46 2 51 0;
+#X connect 46 3 52 0;
+#X connect 46 4 53 0;
+#X connect 48 0 58 0;
+#X connect 51 0 49 0;
+#X connect 52 0 54 0;
+#X connect 53 0 57 0;
+#X connect 54 0 55 0;
+#X connect 57 0 56 0;
+#X connect 58 0 50 0;
+#X connect 64 0 65 0;
+#X connect 64 1 66 0;
+#X connect 64 2 69 0;
+#X connect 64 3 70 0;
+#X connect 64 4 71 0;
+#X connect 66 0 76 0;
+#X connect 69 0 67 0;
+#X connect 70 0 72 0;
+#X connect 71 0 75 0;
+#X connect 72 0 73 0;
+#X connect 75 0 74 0;
+#X connect 76 0 68 0;
+#X connect 85 0 84 0;
+#X connect 86 0 85 1;
+#X restore 111 106 pd sensel;
+#X obj 328 118 r fingers;
+#X obj 328 260 ali.paf-space-abs 1;
+#X obj 479 260 ali.paf-space-abs 2;
+#X obj 629 259 ali.paf-space-abs 4;
+#X obj 328 165 route 0 1 2 3;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 3 0 7 0;
+#X connect 4 0 0 0;
+#X connect 4 0 0 1;
+#X connect 5 0 0 0;
+#X connect 5 0 0 1;
+#X connect 6 0 0 0;
+#X connect 6 0 0 1;
+#X connect 7 0 1 0;
+#X connect 7 1 4 0;
+#X connect 7 2 5 0;
+#X connect 7 3 6 0;

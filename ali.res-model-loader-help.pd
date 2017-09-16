@@ -1,0 +1,28 @@
+#N canvas 663 166 1297 969 10;
+#X floatatom 323 108 5 0 0 0 - - -, f 5;
+#X msg 481 223 indian-roots_Chakoa-8.coll indian-roots_Chakoa-9.coll
+indian-roots_Dhalki-2.coll indian-roots_Duggi-4.coll indian-roots_Hand-Dhal.coll
+indian-roots_khol.coll indian-roots_Madal.coll indian-roots_Manjeera-1.coll
+indian-roots_Mirdangam-1.coll indian-roots_Mirdangam-4.coll indian-roots_Mirdangam-15.coll
+indian-roots_Mirdangam-low-1.coll indian-roots_Stick-Dhal-1.coll indian-roots_Stick-Dhal-8.coll
+indian-swar_DH1LDGE.max indian-swar_DH1TIN.max indian-swar_NG1GE.max
+indian-swar_NG1NA.max indian-swar_PK1DIN.max indian-swar_PK1GE.max
+indian-swar_PK1LOWTA.max;
+#X floatatom 378 177 5 0 0 0 - - -, f 5;
+#X obj 268 476 resonators~;
+#X msg 215 350 0.5;
+#X obj 259 526 dac~;
+#X obj 379 436 ali.res-model-loader;
+#X text 357 107 number of resonances (for amp sorting \, the collection
+must be amplitude sorted from highest to lowest);
+#X text 414 175 model number \, selected from list in the 3rd inlet
+count starts with 1;
+#X text 506 387 list of resonance model collections (max style text
+file) they should all be in the search path;
+#X connect 0 0 6 0;
+#X connect 1 0 6 2;
+#X connect 2 0 6 1;
+#X connect 3 0 5 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 6 0 3 0;

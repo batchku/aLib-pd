@@ -1,0 +1,51 @@
+#N canvas 0 23 1416 603 10;
+#X floatatom 416 386 5 0 0 0 - - -, f 5;
+#X floatatom 742 386 5 0 0 0 - - -, f 5;
+#X floatatom 1022 387 5 0 0 0 - - -, f 5;
+#X obj 417 141 ali.pbank-param someName 0 freq 100 300;
+#X obj 743 139 ali.pbank-param someName 1 amp 0 1;
+#X obj 1024 140 ali.pbank-param someName 2 mod 30 40;
+#X text 59 339 arg1: pbank name-space;
+#X text 60 406 arg4: preset file name;
+#X text 59 365 arg2: number of columns (params);
+#X text 59 386 arg3: number of rows (presets);
+#X text 415 507 arg4: scale to min (def 0);
+#X text 417 531 arg5: scale to max (def 127);
+#X text 413 458 arg2: number of this param (starts with 0;
+#X text 415 483 arg3: display name of this param (eg "freq");
+#X text 412 430 arg1: name of pbank namespace;
+#N canvas 0 23 706 564 space-interpolation 0;
+#X obj 167 99 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 220 44 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 160 229 / 127;
+#X obj 207 228 / 127;
+#X obj 157 261 pack 1 1;
+#X msg 156 296 interp \$1 \$2;
+#X obj 191 193 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 155 329 outlet;
+#X text 297 258 this interpolates between the 1st 10 presets;
+#X text 299 281 as if the 10 presets are layed out on a 2d space;
+#X text 304 307 you must have 10 presets saved for this to work!;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 1;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 6 0 2 0;
+#X restore 54 150 pd space-interpolation;
+#X text 45 30 parameter management and interpolation;
+#X text 49 90 step 1: create an 'ali.bpank' abstraction;
+#X text 421 89 step 2: create an 'ali.pbank-param' abstraction for
+each paramter of your patch;
+#X obj 54 467 print from-pbank;
+#X obj 55 208 ali.pbank 3 10 ali.pbank-test someName;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 15 0 20 0;
+#X connect 20 0 19 0;

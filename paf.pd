@@ -1,0 +1,46 @@
+#N canvas 0 0 585 522 10;
+#X obj 120 271 inlet~;
+#X obj 191 302 inlet~;
+#X obj 120 298 phasor~;
+#X obj 175 325 +~;
+#X obj 174 482 outlet~;
+#X obj 265 281 inlet;
+#X obj 175 393 *~ 512;
+#X text 235 394 ISPW tables were always 512 points.;
+#X obj 176 347 -~ 0.001953;
+#X text 260 348 back up 1/512;
+#X obj 175 371 wrap~;
+#X obj 175 416 +~ 1;
+#X obj 318 278 inlet;
+#X obj 174 456 tabread4~ no-table-set;
+#X text 67 10 ISPW-style osc1~ \, second version \, using tabread4~
+to allow arbitrary tables. A third inlet allows phase setting messages
+to the phasor~ object \, and the "set" message \, which on the ISPW
+was to the left inlet \, now comes in on a fourth inlet (because in
+Pd you can't mix signal and control on a subpatch inlet \, although
+you ought to be able to.);
+#X text 265 262 phase;
+#X text 265 249 set;
+#X text 316 245 set;
+#X text 316 258 table;
+#X text 215 416 add 1 offset;
+#X text 64 109 The tables should have 515 points: the 512 of the ISPW
+table \, plus copies of points 0 \, 1 \, 2 at points 512 \, 513 \,
+514 This is done by the "tab2~" object.;
+#X obj 378 437 loadbang;
+#X msg 378 483 set \$1;
+#X obj 378 460 symbol \$1;
+#X connect 0 0 2 0;
+#X connect 1 0 3 1;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 5 0 2 1;
+#X connect 6 0 11 0;
+#X connect 8 0 10 0;
+#X connect 10 0 6 0;
+#X connect 11 0 13 0;
+#X connect 12 0 13 0;
+#X connect 13 0 4 0;
+#X connect 21 0 23 0;
+#X connect 22 0 13 0;
+#X connect 23 0 22 0;

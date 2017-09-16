@@ -1,0 +1,30 @@
+#N canvas 521 290 585 426 10;
+#X floatatom 143 294 5 0 0 0 - - -, f 5;
+#X obj 119 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 156 235 ali.counter 1 4;
+#X msg 161 61 0;
+#X text 189 60 up;
+#X msg 178 92 1;
+#X floatatom 203 137 5 0 0 0 - - -, f 5;
+#X text 245 135 set on next clock;
+#X floatatom 223 169 5 0 0 0 - - -, f 5;
+#X text 265 167 set immediately;
+#X floatatom 255 200 5 0 0 0 - - -, f 5;
+#X text 297 198 set counter max;
+#X obj 202 328 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 219 296 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 227 329 hit min;
+#X text 241 295 hit max;
+#X text 213 92 down (broken!);
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 2 1 12 0;
+#X connect 2 2 13 0;
+#X connect 3 0 2 1;
+#X connect 5 0 2 1;
+#X connect 6 0 2 2;
+#X connect 8 0 2 3;
+#X connect 10 0 2 4;

@@ -1,0 +1,87 @@
+#N canvas 721 34 1586 794 10;
+#X obj 276 587 resonators~;
+#X obj 655 86 adc~;
+#X msg 113 78 \; pd dsp \$1;
+#X obj 112 41 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 741 303 ali.plot;
+#X obj 742 253 / 200;
+#X obj 277 395 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 333 394 -1;
+#X obj 317 77 metro 500;
+#X obj 317 40 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 266 749 dac~;
+#X obj 276 711 *~ 0.1;
+#X msg 321 533 400 0.2 1 600 0.1 1;
+#X floatatom 335 661 5 0 0 0 - - -, f 5;
+#X obj 172 476 f 0.1;
+#X floatatom 213 429 5 0 0 0 - - -, f 5;
+#X obj 320 509 print to-resonators;
+#X msg 405 451 -----------;
+#X obj 154 441 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 237 356 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 370 276 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 317 178 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#N canvas 0 22 450 300 mult 0;
+#X obj 150 57 inlet~;
+#X obj 218 55 inlet~;
+#X obj 167 128 *~;
+#X obj 172 196 outlet~;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X restore 269 656 pd mult;
+#X msg 369 344 1;
+#X msg 318 128 0;
+#X obj 316 227 ali.fade-in-out 15;
+#X obj 369 313 del 50;
+#X obj 278 431 array get spect-res;
+#X obj 655 122 fiddle~ 1024 1 20 20;
+#X obj 791 252 ali.fiddle-to-array spect 20;
+#X text 970 245 arg1: basename for -res and -sin arrays arg2: number
+of partials;
+#X text 793 106 write in freq and amplitude values for all partials
+into two arrays \; one with freq-amp pairs \, another with freq-amp-decayrate
+triplets;
+#N canvas 1263 640 450 300 data-template 0;
+#X obj 75 47 struct fiddle-arrays array spect-sin;
+#X obj 73 91 plot spect-sin;
+#X restore 694 631 pd data-template;
+#X connect 0 0 22 0;
+#X connect 1 0 28 0;
+#X connect 3 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 6 0 27 0;
+#X connect 7 0 27 1;
+#X connect 8 0 24 0;
+#X connect 9 0 8 0;
+#X connect 11 0 10 1;
+#X connect 11 0 10 0;
+#X connect 12 0 0 0;
+#X connect 13 0 11 1;
+#X connect 14 0 0 0;
+#X connect 15 0 14 1;
+#X connect 17 0 16 0;
+#X connect 18 0 14 0;
+#X connect 19 0 18 0;
+#X connect 19 0 6 0;
+#X connect 20 0 19 0;
+#X connect 20 0 26 0;
+#X connect 21 0 25 0;
+#X connect 22 0 11 0;
+#X connect 23 0 21 0;
+#X connect 24 0 21 0;
+#X connect 25 0 22 1;
+#X connect 25 1 20 0;
+#X connect 26 0 23 0;
+#X connect 27 0 0 0;
+#X connect 27 0 16 0;
+#X connect 28 3 5 0;
+#X connect 28 4 29 0;

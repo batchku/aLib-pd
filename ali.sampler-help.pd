@@ -1,0 +1,55 @@
+#N canvas 432 239 1122 681 10;
+#X obj 761 119 loadbang;
+#X obj 761 168 soundfiler;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array voice-sample 62079 float 0;
+#X coords 0 -1 62078 1 200 120 1 0 0;
+#X restore 759 227 graph;
+#X obj 759 368 loadbang;
+#X obj 759 417 soundfiler;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array bass-sample 98432 float 0;
+#X coords 0 -1 98431 1 200 120 1 0 0;
+#X restore 757 476 graph;
+#X msg 761 143 read -resize ./sound/voice.wav voice-sample;
+#X msg 759 392 read -resize ./sound/string.wav bass-sample;
+#X msg 91 222 play voice-sample 0 500 0.5 1 0;
+#X text 172 25 play message arguments;
+#X text 199 44 arg1: name of sample table or array \; arg2: start time
+in sample \, in msec \; arg3: duration of sound to play \, in msec
+\; 0 for all \; arg4: gain from 0 to 1 \, linear \; arg5: playspeed
+\, 1 is normal \, 2 is double \; arg6: looping \, 0 no loop \, 1 loops
+'til "stop" message \;;
+#X msg 230 427 stop;
+#X msg 219 380 gain \$1;
+#X text 291 216 play first 500 msec of "voice-sample" at 0.5 gain and
+normal playspeed;
+#X obj 103 559 dac~;
+#X msg 119 261 play voice-sample 400 0 0.5 1.1 0;
+#X text 332 255 play "voice-sample" from 400 msec until the end \,
+at 0.5 gain and at 1.1 playspeed;
+#X msg 147 300 play bass-sample 0 0 0.5 1 1;
+#X text 329 293 play and loop "bass-sample" from start to end at 0.5
+gain and normal playspeed;
+#X msg 192 350 0;
+#X msg 227 351 0.1;
+#X msg 268 351 0.5;
+#X text 351 349 change gain;
+#X msg 305 353 1;
+#X obj 116 465 ali.sampler;
+#X text 270 427 stop playback;
+#X connect 0 0 6 0;
+#X connect 3 0 7 0;
+#X connect 6 0 1 0;
+#X connect 7 0 4 0;
+#X connect 8 0 24 0;
+#X connect 11 0 24 0;
+#X connect 12 0 24 0;
+#X connect 15 0 24 0;
+#X connect 17 0 24 0;
+#X connect 19 0 12 0;
+#X connect 20 0 12 0;
+#X connect 21 0 12 0;
+#X connect 23 0 12 0;
+#X connect 24 0 14 0;
+#X connect 24 0 14 1;
