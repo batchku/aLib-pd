@@ -1,0 +1,21 @@
+#N canvas 187 31 363 279 10;
+#X obj 79 64 ali.gain;
+#X obj 16 63 ali.gain;
+#X obj 18 24 inlet~;
+#X obj 77 23 inlet~;
+#X obj 33 174 dac~;
+#X obj 228 89 vsl 15 128 0 127 0 0 empty empty gain 0 -9 0 7 -262144
+-1 -1 0 1;
+#X obj 216 5 r tickler.gain;
+#X obj 78 173 outlet~;
+#X obj 134 174 outlet~;
+#X connect 0 0 4 1;
+#X connect 0 0 8 0;
+#X connect 1 0 4 0;
+#X connect 1 0 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 5 0 0 1;
+#X connect 5 0 1 1;
+#X connect 6 0 5 0;
+#X coords 0 -1 1 1 70 200 1 200 50;

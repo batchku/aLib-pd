@@ -1,0 +1,13 @@
+#N canvas 0 23 1408 829 10;
+#X floatatom 106 343 5 0 0 0 - - -, f 5;
+#X obj 958 457 ali.pbank 4 12 ali.pbank-test someName;
+#X floatatom 432 343 5 0 0 0 - - -, f 5;
+#X floatatom 759 343 5 0 0 0 - - -, f 5;
+#X obj 386 448 ali.pbank-param this 1;
+#X obj 433 96 ali.pbank-param someName-0 0 fancyName0 30 70;
+#X obj 107 96 ali.pbank-param someName-0 0 fancyName0 30 70;
+#X obj 760 96 ali.pbank-param someName-0 0 fancyName0 30 70;
+#X obj 563 458 ali.pbank-param this 1;
+#X connect 5 0 2 0;
+#X connect 6 0 0 0;
+#X connect 7 0 3 0;
