@@ -1,0 +1,164 @@
+#N canvas 5 23 1269 830 10;
+#X obj 877 784 dac~;
+#X obj 216 301 bng 15 250 50 0 clearall empty clear_all 17 7 0 10 -262144
+-1 -1;
+#X obj 217 229 tgl 15 0 record0 empty record_master 17 7 0 10 -262144
+-1 -1 0 1;
+#X msg 942 197 1;
+#X obj 218 644 metro;
+#X obj 218 610 tgl 15 0 empty go empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 218 576 1;
+#X obj 261 577 + 10;
+#X obj 174 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 832 276 5 0 0 0 - - -, f 5;
+#X obj 103 250 tgl 15 0 looper-active1 empty play_1 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 216 525 t b f;
+#X obj 102 271 tgl 15 0 looper-active2 empty play_2 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 215 273 bng 15 250 50 0 record-layer empty record_layer 17 7
+0 10 -262144 -1 -1;
+#X obj 891 132 r record-layer;
+#X msg 892 274 \$1 record record 1;
+#N canvas 462 218 784 359 router 0;
+#X obj 283 296 outlet;
+#X obj 449 111 r clearall;
+#X msg 419 211 0 record clear bang \, 1 record clear bang \, 2 record
+clear bang;
+#X obj 481 142 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 95 39 inlet;
+#X obj 105 110 ali.uzi 4;
+#X msg 136 207 \$1 play play 1;
+#X msg 255 208 0 play play 1;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 4 0 7 0;
+#X connect 5 2 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X restore 216 704 pd router;
+#X obj 103 229 tgl 15 0 looper-active0 empty play_master 17 7 0 10
+-262144 -1 -1 1 1;
+#X obj 51 163 tgl 15 0 go goGUI go 17 7 0 10 -262144 -1 -1 0 1;
+#X msg 120 589 set \$1;
+#X obj 120 628 s goGUI;
+#X msg 1174 770 len \$1;
+#X obj 633 340 r record0;
+#X obj 654 368 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 633 444 reset \, record record \$1;
+#N canvas 0 23 640 456 maybe-useful-oneday 0;
+#X msg 138 406 gain \$1;
+#X obj 141 250 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 237 78 snapshot~ 20;
+#X obj 201 46 metro 100;
+#X obj 201 18 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 240 133 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 237 107 * 127;
+#X obj 338 79 snapshot~ 20;
+#X floatatom 321 112 5 0 0 0 - - -, f 5;
+#X obj 186 280 makefilename \$0-sound%d;
+#X msg 186 310 set \$1;
+#X msg 186 343 1003-sound2;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X restore 697 102 pd maybe-useful-oneday;
+#X obj 891 469 route 0 1 2 3 4;
+#X text 431 731 master layer;
+#X text 1086 687 other layers;
+#X obj 425 693 ali.live-looper sound0 0;
+#X obj 101 292 tgl 15 0 looper-active3 empty play_3 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 100 311 tgl 15 0 looper-active4 empty play_4 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 892 238 ali.counter 1 4;
+#X text 790 237 layer picker;
+#X text 264 645 master metro;
+#X obj 940 167 r clearall;
+#X obj 50 24 receive fromGUI;
+#X obj 49 58 route list;
+#X obj 50 85 route /go /play0 /play1 /play2 /play3 /play4 /record_master
+/record_layer /clear_all;
+#X obj 1073 306 s toGUI;
+#X msg 1073 270 /counter \$1;
+#X obj 327 340 tickler.in;
+#X msg 611 692 record size \$1 \, play len \$1;
+#X obj 889 687 ali.live-looper sound2 2;
+#X obj 858 709 ali.live-looper sound1 1;
+#X obj 917 664 ali.live-looper sound3 3;
+#X obj 948 642 ali.live-looper sound4 4;
+#X msg 216 341 0;
+#X connect 1 0 47 0;
+#X connect 3 0 32 2;
+#X connect 4 0 8 0;
+#X connect 4 0 16 0;
+#X connect 5 0 4 0;
+#X connect 5 0 19 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 1;
+#X connect 11 0 6 0;
+#X connect 11 1 7 0;
+#X connect 14 0 32 0;
+#X connect 15 0 26 0;
+#X connect 16 0 26 0;
+#X connect 19 0 20 0;
+#X connect 21 0 43 1;
+#X connect 21 0 44 1;
+#X connect 21 0 45 1;
+#X connect 21 0 46 1;
+#X connect 22 0 24 0;
+#X connect 22 0 23 0;
+#X connect 24 0 29 1;
+#X connect 26 0 29 1;
+#X connect 26 1 44 1;
+#X connect 26 2 43 1;
+#X connect 26 3 45 1;
+#X connect 26 4 46 1;
+#X connect 29 0 0 0;
+#X connect 29 0 0 1;
+#X connect 29 1 21 0;
+#X connect 29 1 11 0;
+#X connect 29 1 42 0;
+#X connect 32 0 9 0;
+#X connect 32 0 15 0;
+#X connect 32 0 40 0;
+#X connect 35 0 3 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 18 0;
+#X connect 38 1 17 0;
+#X connect 38 2 10 0;
+#X connect 38 3 12 0;
+#X connect 38 4 30 0;
+#X connect 38 5 31 0;
+#X connect 38 6 2 0;
+#X connect 38 7 13 0;
+#X connect 38 8 1 0;
+#X connect 40 0 39 0;
+#X connect 41 0 29 0;
+#X connect 41 0 43 0;
+#X connect 41 0 44 0;
+#X connect 41 0 45 0;
+#X connect 41 0 46 0;
+#X connect 42 0 29 1;
+#X connect 43 0 0 1;
+#X connect 44 0 0 0;
+#X connect 47 0 10 0;
+#X connect 47 0 12 0;
+#X connect 47 0 30 0;
+#X connect 47 0 31 0;
