@@ -1,0 +1,109 @@
+#N canvas 194 56 1297 807 10;
+#X floatatom 323 108 5 0 0 0 - - -, f 5;
+#X msg 481 223 indian-roots_Chakoa-8.coll indian-roots_Chakoa-9.coll
+indian-roots_Dhalki-2.coll indian-roots_Duggi-4.coll indian-roots_Hand-Dhal.coll
+indian-roots_khol.coll indian-roots_Madal.coll indian-roots_Manjeera-1.coll
+indian-roots_Mirdangam-1.coll indian-roots_Mirdangam-4.coll indian-roots_Mirdangam-15.coll
+indian-roots_Mirdangam-low-1.coll indian-roots_Stick-Dhal-1.coll indian-roots_Stick-Dhal-8.coll
+indian-swar_DH1LDGE.max indian-swar_DH1TIN.max indian-swar_NG1GE.max
+indian-swar_NG1NA.max indian-swar_PK1DIN.max indian-swar_PK1GE.max
+indian-swar_PK1LOWTA.max;
+#X floatatom 378 177 5 0 0 0 - - -, f 5;
+#X obj 248 582 resonators~;
+#X msg 195 445 0.5;
+#X obj 239 621 dac~;
+#X obj 379 436 ali.res-model-loader;
+#X text 357 107 number of resonances (for amp sorting \, the collection
+must be amplitude sorted from highest to lowest);
+#X text 414 175 model number \, selected from list in the 3rd inlet
+count starts with 1;
+#X text 506 387 list of resonance model collections (max style text
+file) they should all be in the search path;
+#N canvas 414 100 862 729 ali-restransform 0;
+#X obj 94 36 inlet;
+#X obj 129 647 outlet;
+#X obj 147 66 route rate-scale frequency-scale;
+#X obj 395 185 list;
+#X obj 93 345 list-iter 3;
+#X msg 163 189 1;
+#X obj 96 377 unpack 1 1 1;
+#X obj 207 419 * 1;
+#X obj 104 460 pack 1 1 1;
+#X obj 119 559 list-group;
+#X obj 126 285 t l l;
+#X obj 294 492 list length;
+#X obj 202 493 list-iter 1;
+#X obj 427 355 list-iter 3;
+#X obj 430 387 unpack 1 1 1;
+#X obj 541 429 * 1;
+#X obj 438 470 pack 1 1 1;
+#X obj 453 569 list-group;
+#X obj 460 295 t l l;
+#X obj 628 502 list length;
+#X obj 536 503 list-iter 1;
+#X obj 123 250 spigot;
+#X msg 70 188 0;
+#X obj 147 128 t b b f b;
+#X obj 220 128 t b b f b;
+#X msg 211 189 1;
+#X obj 284 249 spigot;
+#X connect 0 0 2 0;
+#X connect 2 0 23 0;
+#X connect 2 1 24 0;
+#X connect 2 2 3 1;
+#X connect 3 0 21 0;
+#X connect 3 0 26 0;
+#X connect 4 0 6 0;
+#X connect 5 0 21 1;
+#X connect 6 0 8 0;
+#X connect 6 1 8 1;
+#X connect 6 2 7 0;
+#X connect 7 0 8 2;
+#X connect 8 0 12 0;
+#X connect 9 0 1 0;
+#X connect 10 0 4 0;
+#X connect 10 1 11 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 0;
+#X connect 13 0 14 0;
+#X connect 14 0 16 0;
+#X connect 14 1 15 0;
+#X connect 14 2 16 2;
+#X connect 15 0 16 1;
+#X connect 16 0 20 0;
+#X connect 17 0 1 0;
+#X connect 18 0 13 0;
+#X connect 18 1 19 0;
+#X connect 19 0 17 1;
+#X connect 20 0 17 0;
+#X connect 21 0 10 0;
+#X connect 22 0 21 1;
+#X connect 22 0 26 1;
+#X connect 23 0 3 0;
+#X connect 23 1 5 0;
+#X connect 23 2 7 1;
+#X connect 23 3 22 0;
+#X connect 24 1 25 0;
+#X connect 24 2 15 1;
+#X connect 24 3 22 0;
+#X connect 25 0 26 1;
+#X connect 26 0 18 0;
+#X restore 418 548 pd ali-restransform;
+#X msg 479 493 rate-scale \$1;
+#X floatatom 544 445 5 0 0 0 - - -, f 5;
+#X obj 441 605 print;
+#X msg 724 472;
+#X floatatom 656 444 5 0 0 0 - - -, f 5;
+#X msg 591 492 frequency-scale \$1;
+#X connect 0 0 6 0;
+#X connect 1 0 6 2;
+#X connect 2 0 6 1;
+#X connect 3 0 5 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 6 0 10 0;
+#X connect 10 0 13 0;
+#X connect 10 0 3 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 15 0 16 0;
