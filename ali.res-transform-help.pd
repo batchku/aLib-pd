@@ -1,6 +1,6 @@
 #N canvas 194 56 1297 807 10;
-#X floatatom 323 108 5 0 0 0 - - -, f 5;
-#X msg 481 223 indian-roots_Chakoa-8.coll indian-roots_Chakoa-9.coll
+#X floatatom 274 103 5 0 0 0 - - -, f 5;
+#X msg 384 212 indian-roots_Chakoa-8.coll indian-roots_Chakoa-9.coll
 indian-roots_Dhalki-2.coll indian-roots_Duggi-4.coll indian-roots_Hand-Dhal.coll
 indian-roots_khol.coll indian-roots_Madal.coll indian-roots_Manjeera-1.coll
 indian-roots_Mirdangam-1.coll indian-roots_Mirdangam-4.coll indian-roots_Mirdangam-15.coll
@@ -8,36 +8,78 @@ indian-roots_Mirdangam-low-1.coll indian-roots_Stick-Dhal-1.coll indian-roots_St
 indian-swar_DH1LDGE.max indian-swar_DH1TIN.max indian-swar_NG1GE.max
 indian-swar_NG1NA.max indian-swar_PK1DIN.max indian-swar_PK1GE.max
 indian-swar_PK1LOWTA.max;
-#X floatatom 378 177 5 0 0 0 - - -, f 5;
-#X obj 203 729 dac~;
-#X obj 379 436 ali.res-model-loader;
-#X text 357 107 number of resonances (for amp sorting \, the collection
+#X floatatom 329 172 5 0 0 0 - - -, f 5;
+#X obj 372 792 dac~;
+#X obj 282 425 ali.res-model-loader;
+#X text 308 102 number of resonances (for amp sorting \, the collection
 must be amplitude sorted from highest to lowest);
-#X text 414 175 model number \, selected from list in the 3rd inlet
+#X text 365 170 model number \, selected from list in the 3rd inlet
 count starts with 1;
-#X text 506 387 list of resonance model collections (max style text
+#X text 409 376 list of resonance model collections (max style text
 file) they should all be in the search path;
-#X msg 443 601 rate-scale \$1;
-#X floatatom 485 575 5 0 0 0 - - -, f 5;
-#X floatatom 597 574 5 0 0 0 - - -, f 5;
-#X msg 555 600 frequency-scale \$1;
-#X floatatom 729 575 5 0 0 0 - - -, f 5;
-#X msg 687 601 gain-scale \$1;
-#X obj 382 656 ali.res-transform;
-#X obj 211 690 resonators~;
-#X obj 460 695 print 1;
-#X obj 405 712 print 2;
-#X obj 285 40 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X msg 346 590 rate-scale \$1;
+#X floatatom 388 564 5 0 0 0 - - -, f 5;
+#X floatatom 500 563 5 0 0 0 - - -, f 5;
+#X msg 458 589 frequency-scale \$1;
+#X floatatom 632 564 5 0 0 0 - - -, f 5;
+#X msg 590 590 gain-scale \$1;
+#X obj 285 645 ali.res-transform;
+#X obj 95 655 resonators~;
+#X obj 363 684 print 1;
+#X obj 308 701 print 2;
+#X obj 275 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 154 377 metro 200;
-#X obj 230 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 57 366 metro 200;
+#X obj 60 317 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 195 445 0.8;
-#X obj 623 439 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5200 1;
-#X obj 599 476 moses 64;
-#X obj 465 521 ali.scale 0 64 0 1;
-#X obj 641 528 ali.scale 64 127 1 5;
+#X msg 44 487 0.8;
+#X obj 505 417 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4600 1;
+#X obj 502 465 moses 64;
+#X obj 368 510 ali.scale 0 64 0 1;
+#X obj 544 517 ali.scale 64 127 1 5;
+#X floatatom 802 112 5 0 0 0 - - -, f 5;
+#X msg 912 221 indian-roots_Chakoa-8.coll indian-roots_Chakoa-9.coll
+indian-roots_Dhalki-2.coll indian-roots_Duggi-4.coll indian-roots_Hand-Dhal.coll
+indian-roots_khol.coll indian-roots_Madal.coll indian-roots_Manjeera-1.coll
+indian-roots_Mirdangam-1.coll indian-roots_Mirdangam-4.coll indian-roots_Mirdangam-15.coll
+indian-roots_Mirdangam-low-1.coll indian-roots_Stick-Dhal-1.coll indian-roots_Stick-Dhal-8.coll
+indian-swar_DH1LDGE.max indian-swar_DH1TIN.max indian-swar_NG1GE.max
+indian-swar_NG1NA.max indian-swar_PK1DIN.max indian-swar_PK1GE.max
+indian-swar_PK1LOWTA.max;
+#X floatatom 857 181 5 0 0 0 - - -, f 5;
+#X obj 810 434 ali.res-model-loader;
+#X text 836 111 number of resonances (for amp sorting \, the collection
+must be amplitude sorted from highest to lowest);
+#X text 893 179 model number \, selected from list in the 3rd inlet
+count starts with 1;
+#X text 937 385 list of resonance model collections (max style text
+file) they should all be in the search path;
+#X msg 874 599 rate-scale \$1;
+#X floatatom 916 573 5 0 0 0 - - -, f 5;
+#X floatatom 1028 572 5 0 0 0 - - -, f 5;
+#X msg 986 598 frequency-scale \$1;
+#X floatatom 1160 573 5 0 0 0 - - -, f 5;
+#X msg 1118 599 gain-scale \$1;
+#X obj 891 693 print 1;
+#X obj 836 710 print 2;
+#X obj 803 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 1068 437 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5900 1;
+#X obj 1030 474 moses 64;
+#X obj 896 519 ali.scale 0 64 0 1;
+#X obj 1072 526 ali.scale 64 127 1 5;
+#X obj 103 415 random 2;
+#X obj 81 455 spigot;
+#X msg 90 483 0.8;
+#X obj 813 654 ali.res-transform;
+#X obj 653 698 resonators~;
+#X obj 149 449 + 1;
+#X obj 149 488 * 100;
+#X obj 741 499 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11200 1;
+#X floatatom 195 447 5 0 0 0 - - -, f 5;
 #X connect 0 0 4 0;
 #X connect 1 0 4 2;
 #X connect 2 0 4 1;
@@ -55,6 +97,8 @@ file) they should all be in the search path;
 #X connect 15 0 3 1;
 #X connect 18 0 0 0;
 #X connect 19 0 21 0;
+#X connect 19 0 46 0;
+#X connect 19 0 47 0;
 #X connect 20 0 19 0;
 #X connect 21 0 15 0;
 #X connect 22 0 23 0;
@@ -62,3 +106,33 @@ file) they should all be in the search path;
 #X connect 23 1 25 0;
 #X connect 24 0 9 0;
 #X connect 25 0 9 0;
+#X connect 26 0 29 0;
+#X connect 27 0 29 2;
+#X connect 28 0 29 1;
+#X connect 29 0 39 0;
+#X connect 29 0 49 0;
+#X connect 33 0 49 0;
+#X connect 34 0 33 0;
+#X connect 35 0 36 0;
+#X connect 36 0 49 0;
+#X connect 37 0 38 0;
+#X connect 38 0 49 0;
+#X connect 41 0 26 0;
+#X connect 42 0 43 0;
+#X connect 43 0 44 0;
+#X connect 43 1 45 0;
+#X connect 44 0 34 0;
+#X connect 45 0 34 0;
+#X connect 46 0 47 1;
+#X connect 46 0 51 0;
+#X connect 47 0 48 0;
+#X connect 48 0 50 0;
+#X connect 49 0 40 0;
+#X connect 49 0 50 0;
+#X connect 50 0 3 0;
+#X connect 50 0 3 1;
+#X connect 51 0 52 0;
+#X connect 52 0 19 1;
+#X connect 53 0 22 0;
+#X connect 53 0 42 0;
+#X connect 54 0 52 1;
